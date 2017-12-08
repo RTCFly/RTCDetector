@@ -1,0 +1,21 @@
+{
+  "compilerOptions" : {
+    "module" : "commonjs",
+    "target" : "es5",
+    "sourceMap" : true,
+    "outDir" : "./dist"
+  },
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "types": [
+    "mocha",
+    "node",
+    "chai",
+    "sinon",
+    "sinon-chai"
+  ],
+  "exclude" : [
+    "node_modules"
+  ]
+}
