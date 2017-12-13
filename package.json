@@ -1,6 +1,6 @@
 {
   "name": "rtcdetector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Detect browser type based on WebRTC feature detection",
   "main": "dist/index.js",
   "scripts": {
