@@ -1,23 +1,23 @@
 {
-  "name": "typescript-mocha-boilerplate",
-  "version": "1.0.0",
-  "description": "A little boilerplate to get a quick typescript tdd setting up and running.",
-  "main": "src/index.ts",
+  "name": "rtcdetector",
+  "version": "1.0.4",
+  "description": "Detect browser type based on WebRTC feature detection",
+  "main": "dist/index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "test": "node_modules/.bin/mocha --opts ./mocha.opts",
     "build":"tsc"
   },
   "keywords": [
-    "mocha",
-    "typescript",
-    "tdd"
+    "browser",
+    "WebRTC",
+    "TypeScript"
   ],
   "author": "elmarti",
   "license": "MIT",
   "dependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.44",
-    "@types/navigation": "^4.0.3",
     "@types/sinon": "^2.3.7",
     "@types/sinon-chai": "^2.7.29",
     "chai": "^4.1.2",

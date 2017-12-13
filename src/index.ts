@@ -80,26 +80,28 @@ var utils = {
 };
 
 
-export function DetectBrowser() : IBrowserInfo {
+export function detectBrowser(injectedWindow) : IBrowserInfo {
+  if(!injectedWindow){
+    injectedWindow = window;
+  }
    const result = {
       name : Browsers.Other,
       version: null
     };
     
-    if (typeof window === 'undefined' || !window.navigator) {
+    if (typeof injectedWindow === 'undefined' || !injectedWindow.navigator) {
       return result;
     }
-    const { navigator } = window;
-
-
+    const { navigator } = injectedWindow;
     // Firefox.
     if ((navigator as any).mozGetUserMedia) {
+
       result.name = Browsers.Firefox;
       result.version = utils.extractVersion(navigator.userAgent,
           /Firefox\/(\d+)\./, 1);
     } else if ((navigator as any).webkitGetUserMedia) {
       // Chrome, Chromium, Webview, Opera, all use the chrome shim for now
-      if ((window as any).webkitRTCPeerConnection) {
+      if ((injectedWindow as any).webkitRTCPeerConnection) {
         result.name = Browsers.Chrome;
         result.version = utils.extractVersion(navigator.userAgent,
           /Chrom(e|ium)\/(\d+)\./, 2);
